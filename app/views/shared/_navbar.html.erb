@@ -1,0 +1,33 @@
+<div class="top-stripe">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <a href="/">NOTES <span class='highlight-text'>APP</span></a>
+      <% if user_signed_in? %>
+        <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'SIGN IN', new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="toolbar">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <% @breadcrumbs.each do |breadcrumb| %>
+          <% if breadcrumb[:path].nil? %>
+            <li class="breadcrumb-item active" aria-current="page">
+              <%= breadcrumb[:label] %>
+            </li>
+          <% else %>
+            <li class="breadcrumb-item">
+              <%= link_to breadcrumb[:label], breadcrumb[:path] %>
+            </li>
+          <% end %>
+        <% end %>
+      </ol>
+      <%= yield(:tools) %>
+    </div>
+  </div>
+</div>

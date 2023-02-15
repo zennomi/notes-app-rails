@@ -64,12 +64,12 @@
               <h6 class="dropdown-header d-flex align-items-center">
                 <img class="dropdown-user-img" src="/assets/profile-1.png" />
                 <div class="dropdown-user-details">
-                  <div class="dropdown-user-details-name">Valerie Luna</div>
-                  <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6d1b0118030c2d0c0201430e0200">[email&#160;protected]</a></div>
+                  <div class="dropdown-user-details-name"><%= current_user.email %></div>
+                  <%# <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6d1b0118030c2d0c0201430e0200">[email&#160;protected]</a></div> %>
                 </div>
               </h6>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="starter-default.html#!">
+              <a class="dropdown-item" href="/">
                 <div class="dropdown-item-icon"><i class="fa-solid fa-gear"></i></i></div>
               Account
             </a>
@@ -166,7 +166,7 @@
           <div class="sidenav-footer-content">
             <% if user_signed_in? %>
               <div class="sidenav-footer-subtitle">Logged in as:</div>
-              <div class="sidenav-footer-title">Valerie Luna</div>
+              <div class="sidenav-footer-title"><%= current_user.email %></div>
             <% end %>
           </div>
         </div>

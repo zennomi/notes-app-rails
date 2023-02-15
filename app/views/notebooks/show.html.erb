@@ -4,38 +4,54 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-auto mt-4">
           <h1 class="page-header-title">
-            <div class="page-header-icon"><i class="fa-regular fa-file"></i></div>
+            <div class="page-header-icon"><i class="fa-solid fa-book"></i></div>
             <%= @notebook.title %>
           </h1>
-          <div class="page-header-subtitle">Use this blank page as a starting point for creating new pages inside your project!</div>
+          <div class="page-header-subtitle">Updated <%= time_ago_in_words(@notebook.updated_at) %> ago</div>
+        </div>
+        <div class="col-auto">
+          <%= link_to 'Edit', edit_notebook_path(@notebook), class: 'btn btn-outline-light' %>
         </div>
       </div>
     </div>
   </div>
 </header>
-<h3 class='mb-4'>
-  <%= link_to 'Edit', edit_notebook_path(@notebook), class: 'btn btn-outline-primary' %>
-</h3>
-<h5 class='d-flex justify-content-between'>
-  <span>Pages</span>
-  <%= link_to 'New Page', new_notebook_page_path(@notebook), class: 'btn btn-primary' %>
-</h5>
-<table class='table'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @notebook.pages.each do |page| %>
-      <tr>
-        <td><%= page.position %></td>
-        <td><%= link_to page.title, notebook_page_path(@notebook, page) %></td>
-        <td><%= link_to 'Edit', edit_notebook_page_path(@notebook, page) %></td>
-        <td><%= link_to 'Destroy', notebook_page_path(@notebook, page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container py-3">
+  <h5 class='d-flex justify-content-between'>
+    <span>Pages</span>
+    <%= link_to 'New Page', new_notebook_page_path(@notebook), class: 'btn btn-primary' %>
+  </h5>
+  <% @notebook.pages.each do |page| %>
+    <div class="card card-header-actions mx-auto mb-2">
+      <div class="card-header">
+        <div>
+          Page <%= page.position %>: <%= link_to page.title, notebook_page_path(@notebook, page) %>
+        </div>
+        <div>
+          <%= link_to notebook_page_path(@notebook, page), class:"btn btn-teal btn-icon mr-2"  do %>
+            <i class="fa-solid fa-eye"></i>
+          <% end %>
+          <%= link_to edit_notebook_page_path(@notebook, page), class:"btn btn-blue btn-icon"  do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+          <%= link_to notebook_page_path(@notebook, page), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-pink btn-icon mr-2"  do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-around">
+          <div>
+            <i class='fas fa-paragraph me-1'></i> <%= page.paragraphs.count %> paragraphs
+          </div>
+          <div>
+            <i class='fas fa-image me-1'></i> <%= page.image_elements.count %> images
+          </div>
+          <div>
+            <i class='fas fa-list me-1'></i> <%= page.checklists.count %> todo lists
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

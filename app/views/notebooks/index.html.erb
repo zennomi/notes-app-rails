@@ -4,10 +4,10 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-auto mt-4">
           <h1 class="page-header-title">
-            <div class="page-header-icon"><i class="fa-regular fa-file"></i></div>
-            Notes
+            <div class="page-header-icon"><i class="fa-solid fa-books"></i></div>
+            Notebooks
           </h1>
-          <div class="page-header-subtitle">Hello!</div>
+          <div class="page-header-subtitle"><%= @notebooks.count %> notebooks</div>
         </div>
         <div class="col-auto mt-4">
           <%= link_to 'New Notebook', new_notebook_path, class: 'btn btn-light' %>

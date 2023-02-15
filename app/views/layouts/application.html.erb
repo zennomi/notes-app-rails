@@ -14,13 +14,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# <link href="css/styles.css" rel="stylesheet" /> %>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
-    <script data-search-pseudo-elements="" defer="" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet" type="text/css" />
+    <%# <script data-search-pseudo-elements="" defer="" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script> %>
+    <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script> %>
   </head>
   <body class="nav-fixed">
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
       <!-- Sidenav Toggle Button-->
-      <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+      <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
       <!-- Navbar Brand-->
       <!-- * * Tip * * You can use text or an image for your navbar brand.-->
       <!-- * * * * * * When using an image, we recommend the SVG format.-->
@@ -33,56 +34,35 @@
         <!-- Documentation Dropdown-->
         <li class="nav-item dropdown no-caret d-none d-md-block me-3">
           <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="fw-500">Documentation</div>
+            <div class="fw-500">About Project</div>
             <i class="fas fa-chevron-right dropdown-arrow"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
-            <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro" target="_blank">
-              <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="book"></i></div>
+            <a class="dropdown-item py-3" href="https://fb.com/zennomi" target="_blank">
+              <div class="icon-stack bg-primary-soft text-primary me-4"><i class="fa-brands fa-facebook"></i></div>
               <div>
-                <div class="small text-gray-500">Documentation</div>
-                Usage instructions and reference
+                <div class="small text-gray-500">Frontend</div>
+                Nguyen Dang Tuan Anh
               </div>
             </a>
             <div class="dropdown-divider m-0"></div>
-            <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/components" target="_blank">
-              <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="code"></i></div>
+            <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/" target="_blank">
+              <div class="icon-stack bg-primary-soft text-primary me-4"><i class="fa-solid fa-code"></i></div>
               <div>
-                <div class="small text-gray-500">Components</div>
-                Code snippets and reference
-              </div>
-            </a>
-            <div class="dropdown-divider m-0"></div>
-            <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/changelog" target="_blank">
-              <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="file-text"></i></div>
-              <div>
-                <div class="small text-gray-500">Changelog</div>
-                Updates and changes
+                <div class="small text-gray-500">Template</div>
+                SB Admin Pro
               </div>
             </a>
           </div>
         </li>
         <!-- Navbar Search Dropdown-->
-        <!-- * * Note: * * Visible only below the lg breakpoint-->
-        <li class="nav-item dropdown no-caret me-3 d-lg-none">
-          <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="starter-default.html#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
-          <!-- Dropdown - Search-->
-          <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
-            <form class="form-inline me-auto w-100">
-              <div class="input-group input-group-joined input-group-solid">
-                <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                <div class="input-group-text"><i data-feather="search"></i></div>
-              </div>
-            </form>
-          </div>
-        </li>
         <!-- User Dropdown-->
         <% if user_signed_in? %>
           <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
-            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="/assets/images/illustrations/profiles/profile-1.png" /></a>
+            <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="/assets/profile-1.png" /></a>
             <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
               <h6 class="dropdown-header d-flex align-items-center">
-                <img class="dropdown-user-img" src="/assets/images/illustrations/profiles/profile-1.png" />
+                <img class="dropdown-user-img" src="/assets/profile-1.png" />
                 <div class="dropdown-user-details">
                   <div class="dropdown-user-details-name">Valerie Luna</div>
                   <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6d1b0118030c2d0c0201430e0200">[email&#160;protected]</a></div>
@@ -90,170 +70,154 @@
               </h6>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="starter-default.html#!">
-                <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                Account
-              </a>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%# <a class="dropdown-item" href="starter-default.html#!">
-                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
-                            Logout
-                        </a> %>
+                <div class="dropdown-item-icon"><i class="fa-solid fa-gear"></i></i></div>
+              Account
+            </a>
+            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+              <div class="dropdown-item-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+              Logout
+            <% end %>
+            <%# <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sidenav shadow-right sidenav-light">
+        <div class="sidenav-menu">
+          <div class="nav accordion" id="accordionSidenav">
+            <!-- Sidenav Menu Heading (Account)-->
+            <!-- Sidenav Menu Heading (Core)-->
+            <div class="sidenav-menu-heading">NotesApp</div>
+            <!-- Sidenav Accordion (Dashboard)-->
+            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+              <div class="nav-link-icon"><i class="fa-solid fa-books"></i></div>
+              Notebooks
+              <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
+              <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                <a class="nav-link" href="#">
+                  Default
+                  <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
+                </a>
+                <a class="nav-link" href="#">Multipurpose</a>
+                <a class="nav-link" href="#">Affiliate</a>
+              </nav>
             </div>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
-    <div id="layoutSidenav">
-      <div id="layoutSidenav_nav">
-        <nav class="sidenav shadow-right sidenav-light">
-          <div class="sidenav-menu">
-            <div class="nav accordion" id="accordionSidenav">
-              <!-- Sidenav Menu Heading (Account)-->
-              <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-              <div class="sidenav-menu-heading d-sm-none">Account</div>
-              <!-- Sidenav Link (Alerts)-->
-              <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-              <a class="nav-link d-sm-none" href="starter-default.html#!">
-                <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                Alerts
-                <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
-              </a>
-              <!-- Sidenav Link (Messages)-->
-              <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-              <a class="nav-link d-sm-none" href="starter-default.html#!">
-                <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                Messages
-                <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
-              </a>
-              <!-- Sidenav Menu Heading (Core)-->
-              <div class="sidenav-menu-heading">Core</div>
-              <!-- Sidenav Accordion (Dashboard)-->
-              <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                Dashboards
-                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-              </a>
-              <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
-                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                  <a class="nav-link" href="dashboard-1.html">
-                    Default
-                    <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                  </a>
-                  <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
-                  <a class="nav-link" href="dashboard-3.html">Affiliate</a>
-                </nav>
-              </div>
-              <div class="collapse" id="collapseLayouts" data-bs-parent="#accordionSidenav">
-                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                  <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                  <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutSidenavVariations" aria-expanded="false" aria-controls="collapseLayoutSidenavVariations">
-                    Navigation
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                  </a>
-                  <div class="collapse" id="collapseLayoutSidenavVariations" data-bs-parent="#accordionSidenavLayout">
-                    <nav class="sidenav-menu-nested nav">
-                      <a class="nav-link" href="layout-static.html">Static Sidenav</a>
-                      <a class="nav-link" href="layout-dark.html">Dark Sidenav</a>
-                      <a class="nav-link" href="layout-rtl.html">RTL Layout</a>
-                    </nav>
-                  </div>
-                  <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
-                  <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
-                    Container Options
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                  </a>
-                  <div class="collapse" id="collapseLayoutContainers" data-bs-parent="#accordionSidenavLayout">
-                    <nav class="sidenav-menu-nested nav">
-                      <a class="nav-link" href="layout-boxed.html">Boxed Layout</a>
-                      <a class="nav-link" href="layout-fluid.html">Fluid Layout</a>
-                    </nav>
-                  </div>
-                  <!-- Nested Sidenav Accordion (Layout -> Page Headers)-->
-                  <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsPageHeaders" aria-expanded="false" aria-controls="collapseLayoutsPageHeaders">
-                    Page Headers
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                  </a>
-                  <div class="collapse" id="collapseLayoutsPageHeaders" data-bs-parent="#accordionSidenavLayout">
-                    <nav class="sidenav-menu-nested nav">
-                      <a class="nav-link" href="header-simplified.html">Simplified</a>
-                      <a class="nav-link" href="header-compact.html">Compact</a>
-                      <a class="nav-link" href="header-overlap.html">Content Overlap</a>
-                      <a class="nav-link" href="header-breadcrumbs.html">Breadcrumbs</a>
-                      <a class="nav-link" href="header-light.html">Light</a>
-                    </nav>
-                  </div>
-                  <!-- Nested Sidenav Accordion (Layout -> Starter Layouts)-->
-                  <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsStarterTemplates" aria-expanded="false" aria-controls="collapseLayoutsStarterTemplates">
-                    Starter Layouts
-                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                  </a>
-                  <div class="collapse" id="collapseLayoutsStarterTemplates" data-bs-parent="#accordionSidenavLayout">
-                    <nav class="sidenav-menu-nested nav">
-                      <a class="nav-link" href="starter-default.html">Default</a>
-                      <a class="nav-link" href="starter-minimal.html">Minimal</a>
-                    </nav>
-                  </div>
-                </nav>
-              </div>
+            <div class="collapse" id="collapseLayouts" data-bs-parent="#accordionSidenav">
+              <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutSidenavVariations" aria-expanded="false" aria-controls="collapseLayoutSidenavVariations">
+                  Navigation
+                  <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayoutSidenavVariations" data-bs-parent="#accordionSidenavLayout">
+                  <nav class="sidenav-menu-nested nav">
+                    <a class="nav-link" href="layout-static.html">Static Sidenav</a>
+                    <a class="nav-link" href="layout-dark.html">Dark Sidenav</a>
+                    <a class="nav-link" href="layout-rtl.html">RTL Layout</a>
+                  </nav>
+                </div>
+                <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
+                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
+                  Container Options
+                  <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayoutContainers" data-bs-parent="#accordionSidenavLayout">
+                  <nav class="sidenav-menu-nested nav">
+                    <a class="nav-link" href="layout-boxed.html">Boxed Layout</a>
+                    <a class="nav-link" href="layout-fluid.html">Fluid Layout</a>
+                  </nav>
+                </div>
+                <!-- Nested Sidenav Accordion (Layout -> Page Headers)-->
+                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsPageHeaders" aria-expanded="false" aria-controls="collapseLayoutsPageHeaders">
+                  Page Headers
+                  <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayoutsPageHeaders" data-bs-parent="#accordionSidenavLayout">
+                  <nav class="sidenav-menu-nested nav">
+                    <a class="nav-link" href="header-simplified.html">Simplified</a>
+                    <a class="nav-link" href="header-compact.html">Compact</a>
+                    <a class="nav-link" href="header-overlap.html">Content Overlap</a>
+                    <a class="nav-link" href="header-breadcrumbs.html">Breadcrumbs</a>
+                    <a class="nav-link" href="header-light.html">Light</a>
+                  </nav>
+                </div>
+                <!-- Nested Sidenav Accordion (Layout -> Starter Layouts)-->
+                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsStarterTemplates" aria-expanded="false" aria-controls="collapseLayoutsStarterTemplates">
+                  Starter Layouts
+                  <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayoutsStarterTemplates" data-bs-parent="#accordionSidenavLayout">
+                  <nav class="sidenav-menu-nested nav">
+                    <a class="nav-link" href="starter-default.html">Default</a>
+                    <a class="nav-link" href="starter-minimal.html">Minimal</a>
+                  </nav>
+                </div>
+              </nav>
             </div>
           </div>
-          <!-- Sidenav Footer-->
-          <div class="sidenav-footer">
-            <div class="sidenav-footer-content">
-              <% if user_signed_in? %>
-                <div class="sidenav-footer-subtitle">Logged in as:</div>
-                <div class="sidenav-footer-title">Valerie Luna</div>
-              <% end %>
-            </div>
+        </div>
+        <!-- Sidenav Footer-->
+        <div class="sidenav-footer">
+          <div class="sidenav-footer-content">
+            <% if user_signed_in? %>
+              <div class="sidenav-footer-subtitle">Logged in as:</div>
+              <div class="sidenav-footer-title">Valerie Luna</div>
+            <% end %>
           </div>
-        </nav>
-      </div>
-      <div id="layoutSidenav_content">
-        <main>
-          <% if !notice.nil? %>
-            <div class="container my-2">
-              <div class="alert alert-primary alert-icon" role="alert" id="notice">
-                <div class="alert-icon-aside">
-                  <i class="far fa-flag"></i>
-                </div>
-                <div class="alert-icon-content">
-                  <%= notice %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <% if !alert.nil? %>
-            <div class="container my-2">
-              <div class="alert alert-danger alert-icon" role="alert" id="alert">
-                <div class="alert-icon-aside">
-                  <i class="far fa-flag"></i>
-                </div>
-                <div class="alert-icon-content">
-                  <%= alert %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <%= render "shared/breadcrumbs"%>
-          <!-- Main page content-->
-          <%= yield %>
-        </main>
-        <footer class="footer-admin mt-auto footer-light">
-          <div class="container-xl px-4">
-            <div class="row">
-              <div class="col-md-6 small">Copyright © Your Website 2021</div>
-              <div class="col-md-6 text-md-end small">
-                <a href="starter-default.html#!">Privacy Policy</a>
-                ·
-                <a href="starter-default.html#!">Terms &amp; Conditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+        </div>
+      </nav>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-      (function(){var js = "window['__CF$cv$params']={r:'750b4bdc8a65073a',m:'53FbOnl6rReGIuaxvVjJD8UU._zw5YPtfxlpQDYVJ2U-1664187934-0-AbeN+A2kmQdnlfWL7mH1dLXxrZv/fbC69O6OG8Nsz3kUvTHbbC+3Mq4ld1gBQlFuCxjygHqjmRYL5KX/3yz7d99mpMS5TJbVgnM4yVmo2xN3NrQpQ6vqxj5YVp2rnpOnapCuG2I5uV+x5TABCfUXkok=',s:[0x5452f9154c,0xd5771a45ba],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
-    </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"750b4bdc8a65073a","token":"6e2c2575ac8f44ed824cef7899ba8463","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>  </body>
+    <div id="layoutSidenav_content">
+      <main>
+        <% if !notice.nil? %>
+          <div class="container my-2">
+            <div class="alert alert-primary alert-icon" role="alert" id="notice">
+              <div class="alert-icon-aside">
+                <i class="far fa-flag"></i>
+              </div>
+              <div class="alert-icon-content">
+                <%= notice %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if !alert.nil? %>
+          <div class="container my-2">
+            <div class="alert alert-danger alert-icon" role="alert" id="alert">
+              <div class="alert-icon-aside">
+                <i class="far fa-flag"></i>
+              </div>
+              <div class="alert-icon-content">
+                <%= alert %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= render "shared/breadcrumbs"%>
+        <!-- Main page content-->
+        <%= yield %>
+      </main>
+      <footer class="footer-admin mt-auto footer-light">
+        <div class="container-xl px-4">
+          <div class="row">
+            <div class="col-md-6 small">Copyright © Your Website 2021</div>
+            <div class="col-md-6 text-md-end small">
+              <a href="starter-default.html#!">Privacy Policy</a>
+              ·
+              <a href="starter-default.html#!">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    (function(){var js = "window['__CF$cv$params']={r:'750b4bdc8a65073a',m:'53FbOnl6rReGIuaxvVjJD8UU._zw5YPtfxlpQDYVJ2U-1664187934-0-AbeN+A2kmQdnlfWL7mH1dLXxrZv/fbC69O6OG8Nsz3kUvTHbbC+3Mq4ld1gBQlFuCxjygHqjmRYL5KX/3yz7d99mpMS5TJbVgnM4yVmo2xN3NrQpQ6vqxj5YVp2rnpOnapCuG2I5uV+x5TABCfUXkok=',s:[0x5452f9154c,0xd5771a45ba],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
+  </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"750b4bdc8a65073a","token":"6e2c2575ac8f44ed824cef7899ba8463","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>  </body>
 </html>

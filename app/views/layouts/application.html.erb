@@ -220,4 +220,88 @@
   <script>
     (function(){var js = "window['__CF$cv$params']={r:'750b4bdc8a65073a',m:'53FbOnl6rReGIuaxvVjJD8UU._zw5YPtfxlpQDYVJ2U-1664187934-0-AbeN+A2kmQdnlfWL7mH1dLXxrZv/fbC69O6OG8Nsz3kUvTHbbC+3Mq4ld1gBQlFuCxjygHqjmRYL5KX/3yz7d99mpMS5TJbVgnM4yVmo2xN3NrQpQ6vqxj5YVp2rnpOnapCuG2I5uV+x5TABCfUXkok=',s:[0x5452f9154c,0xd5771a45ba],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
   </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"750b4bdc8a65073a","token":"6e2c2575ac8f44ed824cef7899ba8463","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>  </body>
+<script>
+  /*!
+    * Start Bootstrap - SB Admin Pro v2.0.4 (https://shop.startbootstrap.com/product/sb-admin-pro)
+    * Copyright 2013-2022 Start Bootstrap
+    * Licensed under SEE_LICENSE (https://github.com/StartBootstrap/sb-admin-pro/blob/master/LICENSE)
+    */
+  window.addEventListener('DOMContentLoaded', event => {
+  // Enable tooltips globally
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+
+  // Enable popovers globally
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl);
+  });
+
+  // Activate Bootstrap scrollspy for the sticky nav component
+  const stickyNav = document.body.querySelector('#stickyNav');
+  if (stickyNav) {
+      new bootstrap.ScrollSpy(document.body, {
+          target: '#stickyNav',
+          offset: 82,
+      });
+  }
+
+  // Toggle the side navigation
+  const sidebarToggle = document.body.querySelector('#sidebarToggle');
+  if (sidebarToggle) {
+      // Uncomment Below to persist sidebar toggle between refreshes
+      // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+      //     document.body.classList.toggle('sidenav-toggled');
+      // }
+      sidebarToggle.addEventListener('click', event => {
+          event.preventDefault();
+          document.body.classList.toggle('sidenav-toggled');
+          localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sidenav-toggled'));
+      });
+  }
+
+  // Close side navigation when width < LG
+  const sidenavContent = document.body.querySelector('#layoutSidenav_content');
+  if (sidenavContent) {
+      sidenavContent.addEventListener('click', event => {
+          const BOOTSTRAP_LG_WIDTH = 992;
+          if (window.innerWidth >= 992) {
+              return;
+          }
+          if (document.body.classList.contains("sidenav-toggled")) {
+              document.body.classList.toggle("sidenav-toggled");
+          }
+      });
+  }
+
+  // Add active state to sidbar nav links
+  let activatedPath = window.location.pathname.match(/([\w-]+\.html)/, '$1');
+
+  if (activatedPath) {
+      activatedPath = activatedPath[0];
+  } else {
+      activatedPath = 'index.html';
+  }
+
+  const targetAnchors = document.body.querySelectorAll('[href="' + activatedPath + '"].nav-link');
+
+  targetAnchors.forEach(targetAnchor => {
+      let parentNode = targetAnchor.parentNode;
+      while (parentNode !== null && parentNode !== document.documentElement) {
+          if (parentNode.classList.contains('collapse')) {
+              parentNode.classList.add('show');
+              const parentNavLink = document.body.querySelector(
+                  '[data-bs-target="#' + parentNode.id + '"]'
+              );
+              parentNavLink.classList.remove('collapsed');
+              parentNavLink.classList.add('active');
+          }
+          parentNode = parentNode.parentNode;
+      }
+      targetAnchor.classList.add('active');
+  });
+  });
+</script>
 </html>

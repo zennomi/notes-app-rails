@@ -26,9 +26,9 @@ class ChecklistItem < ApplicationRecord
     when 'not-started'
       'secondary'
     when 'in-progress'
-      'primary'
+      'warning'
     when 'complete'
-      'dark'
+      'success'
     end
   end
 

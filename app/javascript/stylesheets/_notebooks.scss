@@ -1,0 +1,30 @@
+.notebook-card {
+  .card-title {
+    a {
+      text-decoration: none;
+    }
+  }
+  .stats {
+    p {
+      margin-bottom: 0.5rem;
+    }
+    .started {
+      color: #777777;
+    }
+  }
+}
+
+.text-content {
+  font-size: x-large;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--bs-gray-100);
+  }
+}
+
+.image-content {
+  text-align: center;
+  img {
+    max-width: 80%;
+  }
+}
